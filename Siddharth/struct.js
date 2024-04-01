@@ -9,3 +9,12 @@ registerBtn.addEventListener('click', () => {
 loginBtn.addEventListener('click', () => {
     container.classList.remove("active");
 });
+
+var email = document.getElementById("Email").value;
+var pass = document.getElementById("Password").value;
+
+if(email == "student@muj.manipal.edu" && pass == "password"){
+    window.href = 'student.html';
+}else{
+    alert("Invalid input. Please try again");
+}
