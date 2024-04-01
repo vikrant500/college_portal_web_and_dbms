@@ -18,3 +18,11 @@ if(email == "student@muj.manipal.edu" && pass == "password"){
 }else{
     alert("Invalid input. Please try again");
 }
+
+var emails = document.getElementById("Emails").value;
+var passes = document.getElementById("Passwords").value;
+if(emails == "professor@muj.manipal.edu" && passes == "passwords"){
+    window.href = 'professor.html';
+}else{
+    alert("Invalid input. Please try again");
+}
