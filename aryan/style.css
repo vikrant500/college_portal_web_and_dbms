@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: auto;
+  font-family: "Roboto", sans-serif;
+  background-color: #8ecae6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card_container {
+  width: 1200px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3px;
+  overflow: hidden;
+}
+
+.card_container > .card {
+  background-color: rgb(251, 134, 0);
+  /* border: 2px solid #fb8500; */
+  margin: 2px;
+  width: 500px;
+  height: 300px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.card:hover::before,
+.card:hover > .card_border {
+  opacity: 1;
+}
+
+.card::before,
+.card > .card_border {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  transition: opacity 500ms;
+}
+
+.card::before {
+  opacity: 0.2;
+  border-radius: inherit;
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.6),
+    transparent 40%
+  );
+  z-index: 3;
+}
+
+.card > .card_border {
+  border-radius: inherit;
+  background: radial-gradient(
+    400px circle at var(--mouse-x) var(--mouse-y),
+    rgb(255, 136, 0),
+    transparent 40%
+  );
+  z-index: 1;
+}
+
+.card > .card_content {
+  background-color: rgb(255, 184, 5, 1);
+  width: calc(100% - 5px);
+  height: calc(100% - 5px);
+  border-radius: inherit;
+  margin: 2.5px;
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_content > .text_content {
+  font-size: 2rem;
+  color: #023047;
+}
