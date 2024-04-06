@@ -23,21 +23,42 @@ for (const card of document.querySelectorAll(".card")) {
 //   }
 // };
 
-const modal = document.querySelector(".modal");
-const openModal = document.querySelector(".open-button");
-const closeModal = document.querySelector(".close-button");
-const registerModal = document.querySelector(".register-button");
+// Get all open buttons
+const openButtons = document.querySelectorAll(".open-button");
 
-openModal.addEventListener("click", () => {
-  modal.show();
+// Loop through each open button and attach click event listener
+openButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    // Get the associated modal for the clicked button
+    const modal = button.nextElementSibling;
+    // Open the modal
+    modal.showModal();
+  });
 });
 
+// Get all close buttons
+const closeButtons = document.querySelectorAll(".close-button");
 
-registerModal.addEventListener("click", () => {
-  alert("Registration done!");
-  modal.close();
+// Loop through each close button and attach click event listener
+closeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    // Get the associated modal for the clicked button
+    const modal = button.parentElement;
+    // Close the modal
+    modal.close();
+  });
 });
 
-closeModal.addEventListener("click", () => {
-  modal.close();
+// Get all register buttons
+const registerButtons = document.querySelectorAll(".register-button");
+
+// Loop through each register button and attach click event listener
+registerButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    // Your registration logic goes here
+    alert("Registration done!");
+    // Close the modal
+    const modal = button.parentElement;
+    modal.close();
+  });
 });
