@@ -22,3 +22,22 @@ for (const card of document.querySelectorAll(".card")) {
 //     card.style.setProperty("--mouse-y", `${y}px`);
 //   }
 // };
+
+const modal = document.querySelector(".modal");
+const openModal = document.querySelector(".open-button");
+const closeModal = document.querySelector(".close-button");
+const registerModal = document.querySelector(".register-button");
+
+openModal.addEventListener("click", () => {
+  modal.show();
+});
+
+
+registerModal.addEventListener("click", () => {
+  alert("Registration done!");
+  modal.close();
+});
+
+closeModal.addEventListener("click", () => {
+  modal.close();
+});

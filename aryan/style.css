@@ -1,11 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
-
 body {
   height: 100vh;
   width: auto;
@@ -16,7 +13,6 @@ body {
   align-items: center;
   overflow: hidden;
 }
-
 .card_container {
   width: 1200px;
   height: auto;
@@ -42,7 +38,7 @@ body {
 .card:hover > .card_border {
   opacity: 1;
 }
-
+/*Error with register button here
 .card::before,
 .card > .card_border {
   content: "";
@@ -52,10 +48,10 @@ body {
   opacity: 0;
   height: 100%;
   width: 100%;
-  z-index: 2;
+  z-index: 1;
   transition: opacity 500ms;
 }
-
+*/
 .card::before {
   opacity: 0.2;
   border-radius: inherit;
@@ -66,7 +62,6 @@ body {
   );
   z-index: 3;
 }
-
 .card > .card_border {
   border-radius: inherit;
   background: radial-gradient(
@@ -76,7 +71,6 @@ body {
   );
   z-index: 1;
 }
-
 .card > .card_content {
   background-color: rgb(255, 184, 5, 1);
   width: calc(100% - 5px);
@@ -90,8 +84,35 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 .card_content > .text_content {
   font-size: 2rem;
   color: #023047;
+}/*Added from here*/
+.button{
+  background-color: #023047;
+  color: white;
+  font-size: 15px;
+  border: none;
+  padding: 10px;
+  align-self: center;
+  cursor: pointer;
+} /*CSS for the pop-up*/
+.modal {
+  padding: 1em;
+  font-size: 15px;
+  width: 800px;
+  border: 0;
+  box-shadow: 0 0 1em rgb(0 0 0 / .3);
+  max-width: 80%;
+  border: 1px solid black;
+  border-radius: 10px;
+  top: 40%;
+  left: 60%;
+  transition: 200ms ease-in-out;
+}
+.modal::before{
+  z-index: 4;
+}/*Background shading with pop-up open*/
+.modal::backdrop {
+  background: rgb(0 0 128 / 0.4);
 }
