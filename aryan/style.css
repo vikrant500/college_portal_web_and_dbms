@@ -1,8 +1,11 @@
+/* Reset default margin, padding, and box-sizing */
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
+
+/* Style for the entire body */
 body {
   height: 100vh;
   width: auto;
@@ -13,6 +16,8 @@ body {
   align-items: center;
   overflow: hidden;
 }
+
+/* Container for cards */
 .card_container {
   width: 1200px;
   height: auto;
@@ -24,9 +29,9 @@ body {
   overflow: hidden;
 }
 
+/* Style for each card */
 .card_container > .card {
   background-color: rgb(251, 134, 0);
-  /* border: 2px solid #fb8500; */
   margin: 2px;
   width: 500px;
   height: 300px;
@@ -34,24 +39,28 @@ body {
   position: relative;
 }
 
+/* Card hover effect */
 .card:hover::before,
 .card:hover > .card_border {
   opacity: 1;
 }
-/*Error with register button here
+
+/* Pseudo-element for card hover effect */
 .card::before,
 .card > .card_border {
   content: "";
   position: absolute;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
   opacity: 0;
   height: 100%;
   width: 100%;
   z-index: 1;
   transition: opacity 500ms;
+  pointer-events: none;
 }
-*/
+
+/* Styling for the radial gradient effect on hover */
 .card::before {
   opacity: 0.2;
   border-radius: inherit;
@@ -62,6 +71,7 @@ body {
   );
   z-index: 3;
 }
+
 .card > .card_border {
   border-radius: inherit;
   background: radial-gradient(
@@ -71,6 +81,8 @@ body {
   );
   z-index: 1;
 }
+
+/* Content within each card */
 .card > .card_content {
   background-color: rgb(255, 184, 5, 1);
   width: calc(100% - 5px);
@@ -79,16 +91,18 @@ body {
   margin: 2.5px;
   position: relative;
   z-index: 2;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .card_content > .text_content {
   font-size: 2rem;
   color: #023047;
-}/*Added from here*/
-.button{
+}
+
+/* Styling for buttons */
+.button {
   background-color: #023047;
   color: white;
   font-size: 15px;
@@ -96,23 +110,31 @@ body {
   padding: 10px;
   align-self: center;
   cursor: pointer;
-} /*CSS for the pop-up*/
+}
+
+/* Styling for the modal */
 .modal {
   padding: 1em;
   font-size: 15px;
   width: 800px;
   border: 0;
-  box-shadow: 0 0 1em rgb(0 0 0 / .3);
+  box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
   max-width: 80%;
   border: 1px solid black;
   border-radius: 10px;
-  top: 40%;
-  left: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   transition: 200ms ease-in-out;
+  z-index: 9999;
 }
-.modal::before{
+
+/* Additional styling for modal */
+.modal::before {
   z-index: 4;
-}/*Background shading with pop-up open*/
+}
+
+/* Background shading for modal backdrop */
 .modal::backdrop {
   background: rgb(0 0 128 / 0.4);
 }
