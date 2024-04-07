@@ -1,0 +1,309 @@
+/* Importing the Mukta font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
+
+/* Resetting default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-1: #8ecae6;
+  --color-2: #219ebc;
+  --color-3: #ffb703;
+  --color-4: #fb8500;
+}
+/* Setting the background gradient for the body */
+body {
+  font-family: "Mukta", sans-serif; /* Applying Mukta font to the body */
+  background: linear-gradient(
+    -45deg,
+    var(--color-1),
+    var(--color-2),
+    var(--color-3),
+    var(--color-4)
+  ); /* Background gradient */
+  background-size: 400% 400%; /* Background size for animation */
+  animation: gradient 15s ease infinite; /* Animation for background gradient */
+  background-attachment: fixed; /* Background attachment */
+  height: 100vh; /* Full viewport height */
+}
+
+/* Keyframes for the background gradient animation */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Styles for the sidebar */
+.sidebar {
+  height: 100%; /* Full height of the viewport */
+  width: 80px; /* Initial width */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Background color with transparency */
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Box shadow */
+  position: fixed; /* Fixed positioning */
+  overflow: hidden; /* Hide overflow content */
+  transition: width 0.5s ease-in-out; /* Transition for width change */
+  display: flex; /* Flex display for child alignment */
+  flex-direction: column; /* Column layout */
+}
+
+/* Styling when sidebar is hovered */
+.sidebar:hover {
+  width: 250px; /* Expanded width on hover */
+  display: flex; /* Show contents */
+  align-items: center; /* Center alignment */
+}
+
+/* Styles for the user icons section */
+.user_icons {
+  margin: 3px; /* Margin */
+  position: relative; /* Relative positioning */
+  height: auto; /* Auto height */
+  width: auto; /* Auto width */
+  border-radius: 10px; /* Border radius */
+  cursor: pointer; /* Pointer cursor */
+}
+
+/* Styling when user icons are hovered */
+.user_icons:hover {
+  background-color: lightpink; /* Background color on hover */
+}
+
+/* Styles for user icon figure container */
+.user_icons .user_icon_figure_container {
+  display: flex; /* Flex display */
+  align-items: center; /* Center alignment */
+}
+
+/* Styles for user icon images */
+.user_icons .user_icon_figure_container img {
+  margin: 5px; /* Margin */
+  width: 75%; /* Width */
+  height: auto; /* Auto height */
+  border-radius: 50%; /* Border radius */
+}
+
+/* Styles for figcaption container */
+.figcaption_container {
+  margin-left: 10px; /* Margin left */
+  display: none; /* Hide by default */
+}
+
+/* Styles for figcaption */
+.figcaption_container figcaption {
+  font-size: 1.4rem; /* Font size */
+  color: navy; /* Text color */
+  display: flex; /* Flex display */
+  justify-content: center; /* Center justification */
+  align-items: center; /* Center alignment */
+}
+
+/* Styles for element wrapper */
+.element_wrapper {
+  height: 100%; /* Full height */
+  width: auto; /* Auto width */
+  display: flex; /* Flex display */
+  flex-direction: column; /* Column layout */
+  gap: 10px; /* Gap between elements */
+}
+
+/* Styles for individual containers (attendance, grades, time table) */
+.attendence_container,
+.grades_container,
+.time_table_container {
+  width: calc(100% - 5px); /* Width calculation */
+  margin-left: 2.5px; /* Margin left */
+  height: 100px; /* Height */
+  border-radius: 10px; /* Border radius */
+  position: relative; /* Relative positioning */
+  display: flex; /* Flex display */
+  align-items: center; /* Center alignment */
+  cursor: pointer; /* Pointer cursor */
+}
+
+/* Styles for icon images in individual containers */
+.attendence_container img,
+.grades_container img,
+.time_table_container img {
+  width: 75%; /* Width */
+}
+
+/* Styling when individual containers are hovered */
+.attendence_container:hover,
+.grades_container:hover,
+.time_table_container:hover {
+  background-color: #219ebc; /* Background color on hover */
+}
+
+/* Show text when sidebar is hovered */
+.sidebar:hover .figcaption_container {
+  display: block; /* Show figcaption container */
+  align-items: center; /* Center alignment */
+}
+
+/* Adjust icon size when sidebar is hovered */
+.sidebar:hover .user_icons .user_icon_figure_container img {
+  margin: 5px; /* Margin */
+  width: 25%; /* Width */
+  height: auto; /* Auto height */
+  border-radius: 50%; /* Border radius */
+}
+
+/* Hide text by default */
+.attendence_container p,
+.grades_container p,
+.time_table_container p {
+  display: none; /* Hide text */
+}
+
+/* Show text when individual containers are hovered */
+.sidebar:hover .attendence_container p,
+.sidebar:hover .grades_container p,
+.sidebar:hover .time_table_container p {
+  display: block; /* Show text */
+}
+
+.sidebar:hover .attendence_container img,
+.sidebar:hover .grades_container img,
+.sidebar:hover .time_table_container img {
+  width: 30%; /* Width */
+}
+
+.main_container {
+  width: 100px;
+  height: 100px;
+  border: 2px solid red;
+}
+
+.full_page_wrapper {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome_container {
+  height: auto;
+  width: auto;
+  margin-left: 10px;
+  margin-top: 3px;
+  display: flex;
+  justify-content: center;
+}
+
+.welcome_container p {
+  font-family: "Mukta", sans-serif;
+  font-size: 3.5rem;
+  color: navy;
+}
+
+.gradiant_text {
+  background: linear-gradient(45deg, #028090, #ff006e);
+  -webkit-background-clip: text; /* For Safari */
+  -webkit-text-fill-color: transparent; /* For Safari */
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.main_side_content_wrapper {
+  margin-left: 10px;
+  margin-top: 3px;
+  height: 100%;
+  width: calc(100% - 10px);
+  display: flex;
+}
+
+.main_content {
+  height: auto;
+  margin: 3px;
+  width: calc(100% - 160px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.submittion_page {
+  width: 150px;
+  height: auto;
+  margin: 3px;
+  overflow: hidden;
+}
+
+.class_wrapper {
+  background: linear-gradient(
+    -45deg,
+    hsla(187, 97%, 29%, 0.4),
+    hsla(334, 100%, 50%, 0.4)
+  );
+  animation: gradient_Main_Content 15s ease infinite;
+  width: calc(100% - 4px);
+  margin: 2px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* If needed, add additional styling for odd child elements */
+.class_wrapper:nth-child(odd) {
+  background: linear-gradient(
+    -45deg,
+    hsla(334, 100%, 50%, 0.4),
+    hsla(187, 97%, 29%, 0.4)
+  );
+}
+
+@keyframes gradient_Main_Content {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.class_wrapper h2 {
+  font-size: inherit;
+  text-align: center;
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+.class_content {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.class_content .p_wrapper {
+  font-size: 1.25rem;
+  margin: 2px;
+  border-radius: 5px;
+  padding: 2px;
+  transition: background-color 0.5s ease-in;
+  /* background-color: #f72d00c1; */
+}
+
+.p_wrapper:hover {
+  background-color: aqua;
+  cursor: pointer;
+}
