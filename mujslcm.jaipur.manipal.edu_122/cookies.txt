@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+mujslcm.jaipur.manipal.edu:122	TRUE	/	FALSE	1999999999	__RequestVerificationToken=cqWwJHSnUTtl-ZpiNWIdgI8WfXfs_yxrpFn-yM6eiwWyAwgSmN9f1_UJbg68ZHKG_4sLxLGWMeZlIRpEqoMhpfBhKAy1vk7zLVASVrO3_1I1; ASP.NET_SessionId=r5wmf45yc0m0e1gabxrja0hu
+
