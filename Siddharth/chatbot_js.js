@@ -1,8 +1,12 @@
 const chatInput = document.querySelector(".chat-input textarea");
 const sendChatbtn = document.querySelector(".chat-input span");
 const chatBox = document.querySelector(".chatbox");
+const chatbotToggler = document.querySelector(".chatbot-toggler");
+const chatBotCloseBtn = document.querySelector(".close-btn");
+
 let userMsg;
 const API_KEY = "";
+const inputInitHeight = chatInput.scrollHeight
 
 const createChatLi = (message, className) => {
     //Create a chat lielement with passed msg and className
@@ -31,8 +35,9 @@ const generateResponse = (incomingChatLi) => {
     fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
         messageElement.textContent = data.choices[0].message.content;
     }).catch((error) => {
+        messageElement.classList.add("Error!");
         messageElement.textContent = "Something's wrong! Please try again";
-    })
+    }).finally(() => chatBox.scrollTo(0, chatBox.scrollHeight));
 }
 
 const handleChat =() => {
@@ -40,12 +45,22 @@ const handleChat =() => {
     if(!userMsg) return;
     //Append user msg to chatbox
     chatBox.appendChild(createChatLi(userMsg, "outgoing"));
+    chatBox.scrollTo(0, chatBox.scrollHeight);
     //showing bot thinking dots
     setTimeout(() => {
         const incomingChatLi = createChatLi("Thinking...", "incoming");
         chatBox.appendChild(incomingChatLi);
+        chatBox.scrollTo(0, chatBox.scrollHeight);
         generateResponse(incomingChatLi);
     }, 600);
 }
 
+chatInput.addEventListener("input", () => {
+    //Adjust height of input textarea based on content
+    chatInput.style.height = `${inputInitHeight}px`;
+    chatInput.style.height = `${chatInput.scrollHeight}px`;
+});
+
 sendChatbtn.addEventListener("click", handleChat);
+chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+chatBotCloseBtn.addEventListener("click", () => document.body.classList.toggle("close-btn"));
