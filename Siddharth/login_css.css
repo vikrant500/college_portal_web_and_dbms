@@ -6,8 +6,11 @@
 }
 
 body{
-    background-color: #023047;
-    background: linear-gradient(to right, #219EBC, #023047);
+    /*background-color: #023047;*/
+    background-image: url(Muj2_upscaled.webp);
+    /*background: linear-gradient(to right, #219EBC, #023047);*/
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,6 +27,7 @@ body{
     width: 768px;
     max-width: 100%;
     min-height: 480px;
+    opacity: 0.85;
 }
 
 .container p{
