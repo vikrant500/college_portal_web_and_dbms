@@ -36,7 +36,7 @@ const generateResponse = (incomingChatLi) => {
         messageElement.textContent = data.choices[0].message.content;
     }).catch((error) => {
         messageElement.classList.add("Error!");
-        messageElement.textContent = "Something's wrong! Please try again";
+        messageElement.textContent = "Something's wrong! Please try again later";
     }).finally(() => chatBox.scrollTo(0, chatBox.scrollHeight));
 }
 
