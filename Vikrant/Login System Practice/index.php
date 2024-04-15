@@ -22,7 +22,7 @@
 
     <?php
         // if not logged in
-        if (!isset($SESSION["user_id"]))
+        if (!isset($_SESSION["user_id"]))
         {?>
             <h3>Login</h3>
 
