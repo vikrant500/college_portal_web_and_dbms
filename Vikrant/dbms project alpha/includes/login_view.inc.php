@@ -7,7 +7,7 @@ function output_username()
 {
     if (isset($_SESSION["user_id"]))
     {
-        echo "You are logged in as " . $_SESSION["user_username"];
+        echo "You are logged in as" . $_SESSION["user_username"];
     }
     else
     {

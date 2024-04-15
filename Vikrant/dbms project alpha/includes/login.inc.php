@@ -1,10 +1,12 @@
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST")
+{
     $username = $_POST["username"];
     $pwd = $_POST["pwd"];
 
-    try {
+    try
+    {
         require_once 'dbh.inc.php';
         require_once 'login_model.inc.php';
         require_once 'login_contr.inc.php';
@@ -13,34 +15,38 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $errors = [];
 
-        if (is_input_empty($username, $pwd)) {
+        if (is_input_empty($username, $pwd))
+        {
             $errors["empty_input"] = "Fill in all fields!";
         }
 
         $result = get_user($pdo, $username);
 
-        if (is_username_wrong($result)) {
+        if (is_username_wrong($result))
+        {
             $errors["login_incorrect"] = "Incorrect login info!";
         }
 
         // username exists but password is wrong
-        if (!is_username_wrong($result) && is_password_wrong($pwd, $result["pwd"])) {
+        if (!is_username_wrong($result) && is_password_wrong($pwd, $result["pwd"]))
+        {
             $errors["login_incorrect"] = "Incorrect login info!";
         }
 
         //session was started in this file already
         require_once 'config_session.inc.php';
 
-        if ($errors) {
+        if ($errors)
+        {
             $_SESSION["errors_login"] = $errors;
 
             header("Location: ../index.php");
             die();
         }
-        // --------------ERROR HANDLING DONE-----------------
+        // --------------ERROR HANDLING DONE----------------- 
 
         $newSessionId = session_create_id();
-        $sessionId = $newSessionId . "_" . $result["id"];
+        $sessinId = $newSessionId . "_" . $result["id"];
         session_id($sessionId);
 
         $_SESSION["user_id"] = $result["id"];
@@ -49,15 +55,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // resets the time so that in 30 min, its going to update itself again
         $_SESSION['last_regeneration'] = time();
 
-        // Redirect to nextPage.php
-        header("Location: ../nextPage.php");
-        exit(); // Ensure that no further code is executed after the redirect
+        header("Location: ../index.php?login=success");
 
-    } catch (PDOException $e) {
-        die("Query failed: " . $e->getMessage());
+        $pdo = null;
+        $statement = null;
+        die();
     }
-} else {
+    catch (PDOException $e)
+    {
+        die("Query failed: " . $e -> getMessage());
+    }
+
+}
+else
+{
     header("Location: ../index.php");
     die();
 }
-?>

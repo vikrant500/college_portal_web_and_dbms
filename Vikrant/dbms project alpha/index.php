@@ -31,7 +31,6 @@
                 <input type="password" name = "pwd" placeholder = "Password">
                 <button>Login</button>
             </form>
-            
         </div>
         <div class="form-container Professor">
 
@@ -58,6 +57,7 @@
         </div>
     </div>
 
+    <script src="login_js.js"></script>
 </body>
 
 </html>
