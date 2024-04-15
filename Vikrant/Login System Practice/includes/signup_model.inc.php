@@ -10,7 +10,7 @@ function get_username(object $pdo, string $username)
     $stmt -> execute();
     
     $results = $stmt -> fetch(PDO::FETCH_ASSOC);
-    return $result;
+    return $results;
 }
 
 function get_email(object $pdo, string $email)
@@ -21,7 +21,7 @@ function get_email(object $pdo, string $email)
     $stmt -> execute();
     
     $results = $stmt -> fetch(PDO::FETCH_ASSOC);
-    return $result;
+    return $results;
 }
 
 function set_user(object $pdo, string $username, string $pwd, string $email)

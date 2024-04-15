@@ -11,5 +11,5 @@ function get_user(object $pdo, string $username)
     $stmt -> execute();
     
     $results = $stmt -> fetch(PDO::FETCH_ASSOC);
-    return $result;
+    return $results;
 }
