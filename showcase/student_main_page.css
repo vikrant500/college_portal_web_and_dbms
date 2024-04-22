@@ -96,7 +96,7 @@ body {
 .assignment_wrapper {
   width: calc(100% - 60px);
   height: 250px;
-  background: url("../img/web-tech-stock.jpeg");
+  background: url("img/web-tech-stock.jpeg");
   background-size: cover;
   border-radius: 10px;
   margin: 30px;
@@ -104,10 +104,10 @@ body {
   flex-direction: column;
 }
 .assignment_wrapper:nth-child(2) {
-  background: url("../img/os-stock.webp");
+  background: url("img/os-stock.webp");
 }
 .assignment_wrapper:nth-child(3) {
-  background: url("../img/maths-stock-img.jpeg");
+  background: url("img/maths-stock-img.jpeg");
   background-size: cover;
 }
 .assignment_wrapper h2 {
