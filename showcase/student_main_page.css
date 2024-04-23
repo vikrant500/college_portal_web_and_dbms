@@ -77,6 +77,16 @@ body {
   margin-left: 10px;
 }
 
+.reg_button {
+  font-size: 1.25rem;
+  border: none;
+  background-color: papayawhip;
+}
+
+.reg_button:hover {
+  background-color: tan;
+}
+
 .main_area {
   margin-left: 260px;
   width: calc(100% - 550px);
