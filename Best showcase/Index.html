@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Siddharth Ganesh" />
+    <link rel="stylesheet" href="index.css" />
+    <title>MUJ Page</title>
+    <link rel="icon" href="img/Manipal_logo.png" type="image/x-icon" />
+  </head>
+
+  <body>
+    <div class="container" id="container">
+      <div class="form-container Student">
+        <form>
+          <h1>Student Login</h1>
+          <input type="email" placeholder="Email" id="Email" />
+          <input type="password" placeholder="Password" id="Password" />
+          <button value="signin" onclick="Stud()">Sign In</button>
+        </form>
+      </div>
+      <div class="form-container Professor">
+        <form>
+          <h1>Professor Login</h1>
+          <input type="email" placeholder="Email" id="Emails" />
+          <input type="password" placeholder="Password" id="Passwords" />
+          <button value="signin" onclick="Prof()">Sign In</button>
+        </form>
+      </div>
+      <div class="toggle-container">
+        <div class="toggle">
+          <div class="toggle-panel toggle-right">
+            <h1>Welcome Student</h1>
+            <p>Enter your details</p>
+            <button class="hidden" id="login">Sign In</button>
+          </div>
+          <div class="toggle-panel toggle-left">
+            <h1>Welcome Professor</h1>
+            <p>Enter your details</p>
+            <button class="hidden" id="register">Sign In</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
