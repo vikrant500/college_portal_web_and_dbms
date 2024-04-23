@@ -354,6 +354,10 @@ body {
   visibility: visible;
 }
 
+.podcast embed {
+  width: 100%;
+}
+
 @media (max-width: 490px) {
   .chatbot {
     right: 0;
